@@ -4,11 +4,21 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Configuration
 
+Local Env
 ```
 environment = {
-    ...
+    production: false,
     PORT: 4000 | xxxx,
     SERVER: "http://localhost:4004" | vercel | render
+};
+```
+
+Prod Env
+```
+environment = {
+    production: true,
+    PORT: 4000 | xxxx,
+    SERVER: "https://json-server-product-master.vercel.app"
 };
 ```
 
@@ -32,3 +42,7 @@ Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.gi
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Demo
+
+Vercel: [Product Master](https://angular-ng-rx-crud.vercel.app/)
