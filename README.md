@@ -18,15 +18,13 @@ Prod Env
 environment = {
     production: true,
     PORT: 4000 | xxxx,
-    SERVER: "https://json-server-product-master.vercel.app"
+    SERVER: "http://54.255.239.151:4123/products"
 };
 ```
 
 ## Development server
 
 Run `npm run dev` for a dev server.
-
-Run `npm run server` for a dev api (json-server).
 
 Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 

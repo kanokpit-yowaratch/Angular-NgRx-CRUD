@@ -11,8 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ProductComponent } from './product/product.component';
-import { AddComponent } from './add/add.component';
-import { EditComponent } from './edit/edit.component';
+import { FormComponent } from './form/form.component';
 import { ListComponent } from './list/list.component';
 
 const productRoutes: Routes = [
@@ -22,8 +21,7 @@ const productRoutes: Routes = [
 @NgModule({
   declarations: [
     ProductComponent,
-    AddComponent,
-    EditComponent,
+    FormComponent,
     ListComponent
   ],
   imports: [

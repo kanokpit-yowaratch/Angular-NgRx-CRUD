@@ -8,8 +8,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:ci": "ng test --browsers ChromeHeadless",
-    "server": "json-server --watch db.json --port 4004",
-    "serve:ssr:product-master": "node dist/product-master/server/server.mjs",
     "start": "npm run serve:ssr:product-master",
     "start:dev": "npm run server && npm run serve:ssr:product-master"
   },

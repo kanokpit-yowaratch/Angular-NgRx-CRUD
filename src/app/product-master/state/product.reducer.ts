@@ -18,7 +18,7 @@ export interface AppState extends fromRoot.AppState {
 }
 
 export const productAdapter: EntityAdapter<Product> = createEntityAdapter<
-Product
+    Product
 >();
 
 export const defaultProduct: ProductState = {
@@ -53,12 +53,10 @@ export function productReducer(
                 error: action.payload
             };
         }
-
         case productActions.ProductActionTypes.LOAD_PRODUCT_SUCCESS: {
-            //@ts-ignore
             return productAdapter.addOne(action.payload, {
                 ...state,
-                selectedProductId: action.payload.id
+                selectedProductId: action.payload?.id || 0
             });
         }
         case productActions.ProductActionTypes.LOAD_PRODUCT_FAIL: {
@@ -67,7 +65,6 @@ export function productReducer(
                 error: action.payload
             };
         }
-
         case productActions.ProductActionTypes.CREATE_PRODUCT_SUCCESS: {
             return productAdapter.addOne(action.payload, state);
         }
@@ -77,7 +74,6 @@ export function productReducer(
                 error: action.payload
             };
         }
-
         case productActions.ProductActionTypes.UPDATE_PRODUCT_SUCCESS: {
             return productAdapter.updateOne(action.payload, state);
         }
@@ -87,7 +83,6 @@ export function productReducer(
                 error: action.payload
             };
         }
-
         case productActions.ProductActionTypes.DELETE_PRODUCT_SUCCESS: {
             return productAdapter.removeOne(action.payload, state);
         }
@@ -97,7 +92,6 @@ export function productReducer(
                 error: action.payload
             };
         }
-
         default: {
             return state;
         }
@@ -132,6 +126,7 @@ export const getCurrentProductId = createSelector(
     getProductFeatureState,
     (state: ProductState) => state.selectedProductId
 );
+
 export const getCurrentProduct = createSelector(
     getProductFeatureState,
     getCurrentProductId,

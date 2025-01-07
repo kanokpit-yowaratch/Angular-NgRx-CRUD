@@ -22,6 +22,13 @@ export class ListComponent implements OnInit {
     this.store.dispatch(new productActions.LoadProducts());
     this.products$ = this.store.pipe(select(fromProduct.getProducts));
     this.error$ = this.store.pipe(select(fromProduct.getError));
+    // this.products$.subscribe(res => {
+    //   console.log(res);
+    // });
+    // this.error$.subscribe(err => {
+    //   console.log('error');
+    //   console.log(err);
+    // });
   }
 
   deleteProduct(product: Product) {
@@ -31,6 +38,6 @@ export class ListComponent implements OnInit {
   }
 
   editProduct(product: Product) {
-    this.store.dispatch(new productActions.LoadProduct(product.id || ''));
+    this.store.dispatch(new productActions.LoadProduct(product?.id || 0));
   }
 }

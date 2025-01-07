@@ -9,13 +9,13 @@
       <th></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody *ngIf="(products$ | async)?.length !== 0">
     <tr>
       <td colspan="5" class="alert alert-danger" *ngIf="error$ | async as error">{{error}}</td>
     </tr>
-    <tr>
     <tr *ngFor="let product of (products$ |async)">
-      <th scope="row">{{product.image}}</th>
+      <th scope="row">...</th>
+      <!-- {{product.file}} -->
       <th scope="row">{{product.name}}</th>
       <td>{{product.description}}</td>
       <td>{{product.price}}</td>
@@ -24,6 +24,11 @@
         <br>
         <a (click)=deleteProduct(product)>delete</a>
       </th>
+    </tr>
+  </tbody>
+  <tbody *ngIf="(products$ | async)?.length === 0">
+    <tr>
+      <td colspan="5">No data found</td>
     </tr>
   </tbody>
 </table>

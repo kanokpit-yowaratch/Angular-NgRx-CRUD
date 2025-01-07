@@ -41,7 +41,7 @@ export class LoadProductsFail implements Action {
 export class LoadProduct implements Action {
     readonly type = ProductActionTypes.LOAD_PRODUCT;
 
-    constructor(public payload: string) { }
+    constructor(public payload: number) { }
 }
 
 export class LoadProductSuccess implements Action {
@@ -59,7 +59,7 @@ export class LoadProductFail implements Action {
 export class CreateProduct implements Action {
     readonly type = ProductActionTypes.CREATE_PRODUCT;
 
-    constructor(public payload: Product) { }
+    constructor(public payload: Product | FormData) { }
 }
 
 export class CreateProductSuccess implements Action {
@@ -77,7 +77,7 @@ export class CreateProductFail implements Action {
 export class UpdateProduct implements Action {
     readonly type = ProductActionTypes.UPDATE_PRODUCT;
 
-    constructor(public payload: Product) { }
+    constructor(public payload: Product | FormData) { }
 }
 
 export class UpdateProductSuccess implements Action {
@@ -95,13 +95,13 @@ export class UpdateProductFail implements Action {
 export class DeleteProduct implements Action {
     readonly type = ProductActionTypes.DELETE_PRODUCT;
 
-    constructor(public payload: string) { }
+    constructor(public payload: number) { }
 }
 
 export class DeleteProductSuccess implements Action {
     readonly type = ProductActionTypes.DELETE_PRODUCT_SUCCESS;
 
-    constructor(public payload: string) { }
+    constructor(public payload: number) { }
 }
 
 export class DeleteProductFail implements Action {
