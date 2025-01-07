@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
     PORT: 4000,
-    SERVER: "http://localhost:4000",
-    // SERVER: "https://kanokpit.com"
+    // SERVER: "http://localhost:4000",
+    SERVER: "https://kanokpit.com"
 };
